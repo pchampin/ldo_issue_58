@@ -10,6 +10,7 @@
 
 # production
 /build
+/src/.ldo
 
 # misc
 .DS_Store

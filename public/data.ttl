@@ -1,0 +1,14 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <https://example.org/#>
+
+<#foo1> a ex:Foo ; rdfs:label "foo 1".
+<#foo2> a ex:Foo ; rdfs:label "foo 2".
+<#foo3> a ex:Foo ; rdfs:label "foo 3".
+
+<#bar1> a ex:Bar ; ex:foo <#foo1>.
+<#bar2> a ex:Bar ; ex:foo <#foo2>.
+
+<#baz1> a ex:Baz ; ex:foo <#foo1>, <#foo2>.
+<#baz2> a ex:Baz ; ex:foo <#foo2>, <#foo3>.

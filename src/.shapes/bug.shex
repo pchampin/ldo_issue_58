@@ -1,0 +1,22 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <https://example.org/#>
+
+<#Foo> {
+  rdfs:label xsd:string
+    // rdfs:comment "The label of this foo" ;
+}
+
+<#Bar> {
+  a [ ex:Bar]
+    // rdfs:comment "Instances of Bar have a unique Foo" ;
+  ex:foo @<#Foo>
+    // rdfs:comment "The unique Foo of this Bar" ;
+}
+
+<#Baz> {
+  a [ ex:Baz]
+    // rdfs:comment "Instances of Baz may have multiple Foos" ;
+  ex:foo @<#Foo> +
+    // rdfs:comment "The Foos of this Bar" ;
+}
